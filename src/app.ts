@@ -1,13 +1,15 @@
 import express, { Application, NextFunction, Request, Response } from "express";
 import cors from "cors";
 import httpStatus from "http-status";
+import globalErrorHandler from "./app/middleware/apiErrorHandler";
+import router from "./app/modules";
 
 const app: Application = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use("/api/v1/", routers);
-// app.use(globalErrorHandler);
+app.use("/api/v1/", router);
+app.use(globalErrorHandler);
 app.get("/", (red, res) => {
   res.send("Server connect success");
 });
