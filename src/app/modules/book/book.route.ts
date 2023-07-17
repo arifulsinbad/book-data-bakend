@@ -3,6 +3,22 @@ import { createBookController } from "./book.controller";
 
 const router = express.Router();
 
+router.post(
+  "/create-book",
+
+  createBookController.createBook
+);
+router.get(
+  "/:id",
+
+  createBookController.getSingaleBook
+);
+router.delete(
+  "/:id",
+
+  createBookController.deleteBook
+);
+
 router.patch(
   "/:id",
 
