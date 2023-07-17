@@ -71,6 +71,7 @@ const createPagination = catchAsync(async (req: Request, res: Response) => {
 const updateBook = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
   const updateData = req.body;
+  console.log(updateData);
   const result = await createBookService.UpdateBook(id, updateData);
   sendResponse<IBook>(res, {
     statusCode: httpStatus.OK,
