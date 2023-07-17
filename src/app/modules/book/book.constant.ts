@@ -5,4 +5,10 @@ export const BookSearchTermField = [
   "publicationDate",
 ];
 
-export const BookFiltersField = ["title", "author", "genre", "publicationDate"];
+export const BookFiltersField = [
+  "searchTerm",
+  "title",
+  "author",
+  "genre",
+  "publicationDate",
+];

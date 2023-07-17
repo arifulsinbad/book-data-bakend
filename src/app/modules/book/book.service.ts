@@ -5,6 +5,19 @@ import { IPagination } from "../../interfaceError/pagiation";
 import { IBook, IBookFilter } from "./book.interface";
 import Book from "./book.model";
 import { BookSearchTermField } from "./book.constant";
+const createBook = async (paylod: IBook): Promise<IBook | null> => {
+  const result = await Book.create(paylod);
+  return result;
+};
+const getSingaleBook = async (id: string): Promise<IBook | null> => {
+  const result = await Book.findById(id);
+  return result;
+};
+
+const deleteBook = async (id: string): Promise<IBook | null> => {
+  const result = await Book.findByIdAndDelete(id);
+  return result;
+};
 
 const createPagination = async (
   filters: IBookFilter,
@@ -67,4 +80,7 @@ const UpdateBook = async (
 export const createBookService = {
   createPagination,
   UpdateBook,
+  createBook,
+  getSingaleBook,
+  deleteBook,
 };
