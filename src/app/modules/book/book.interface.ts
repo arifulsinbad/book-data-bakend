@@ -1,4 +1,5 @@
 export type IBook = {
+  email: string;
   image: string;
   title: string;
   author: string;
